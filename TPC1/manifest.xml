@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifesto>
+    <meta>
+        <titulo>Criar uma página Web</titulo>
+        <data>22/02/2022</data>
+        <autor>José Rafael Pires Reis</autor>
+        <numeroAluno>PG47385</numeroAluno>
+        <uc>RPCW</uc>
+    </meta>
+    <resumo>
+        O objetivo deste trabalho é elaborar uma página web sobre um dos temas propostos pelo professor, 
+        para o meu trabalho escolhi elaborar uma página web sobre jacarés.
+        Para a realização do trabalho comecei por criar um ficheiro HTML onde tentei colocar todo o tipo de conhecimento que tenho sobre HTML, 
+        desde a criação parágrafos e títulos até listas e tabelas. Para o estilo da página utilizei o ficheiro CSS recomendado pelo professor,
+        "w3.css", e para finalizar criei um pequeno ficheiro JavaScript com o objetivo de tornar a página web mais interativa.
+    </resumo>
+    <ficheiros>
+        <html>index.html</html>
+        <css>w3.css</css>
+        <js>func.js</js>
+        <img>jacare.jpg</img>
+        <img>jacare2.jpg</img>
+        <img>meme.jpg</img>
+    </ficheiros>
+</manifesto>
