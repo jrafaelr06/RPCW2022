@@ -117,6 +117,7 @@ for d in data:
         <a href="http://localhost:7777/filmes">Voltar atrás</a>
     </body>
 </html>'''.format(d['title'], cast, genres)
+    
     # Escrita do html num ficheiro .html
     movie_file = "arquivos/f" + str(i) + ".html"
     f = open(movie_file, "w", encoding="UTF-8")
@@ -124,12 +125,15 @@ for d in data:
     f.close()
     i += 1
 
+# Para cada ator na lista de atores vamos criar uma página html
 i = 0
 for ator in atores:
+    # Transformar a lista de filmes em que o ator participou numa lista html
     filmes = ""
     for filme in atores[ator]:
         filmes += "\n\t\t\t<li><a>" + filme + "</a></li>"
 
+    # html final da página do ator
     html = '''<!DOCTYPE html>
 <html>
     <head>
@@ -137,14 +141,17 @@ for ator in atores:
         <title>{0}</title>
     </head>
     <body>
-        <h3>Filmes em que {0} participou:</h3>
+        <h3>Filmes em que <strong>{0}</strong> participou:</h3>
         <ul>
             {1}
         </ul>
+        <a href="http://localhost:7777/filmes">Ver lista de filmes</a>
+        <br />
+        <a href="http://localhost:7777/atores">Voltar atrás</a>
     </body>
-</html>
-    '''.format(ator, filmes)
+</html>'''.format(ator, filmes)
 
+    # Escrita da string num ficheiro .html
     ator_file = "arquivos/a" + str(i) + ".html"
     f = open(ator_file, "w", encoding="UTF-8")
     f.write(html)

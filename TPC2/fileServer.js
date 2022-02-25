@@ -12,15 +12,13 @@ myServer = http.createServer(function (req, res) {
             myUrl += "index.html"
         }
     } else if (fields[0] === "atores") {
-        if (fields.length === 2) {
-            myUrl += fields[1] + ".html"
-        } else {
-            myUrl += "atores.html"
-        }
+        myUrl += fields[fields.length - 1] + ".html"
     }
 
     fs.readFile(myUrl, function (err, data) {
         res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'})
+        var d = new Date().toISOString().substring(0, 16)
+        console.log(req.method + " " + req.url + " " + d)
         if (err) {
             res.write("<p>Erro na leitura de ficheiro</p>")
         } else {
