@@ -118,7 +118,7 @@ for d in data:
     </body>
 </html>'''.format(d['title'], cast, genres)
     # Escrita do html num ficheiro .html
-    movie_file = "arquivos/filmes/f" + str(i) + ".html"
+    movie_file = "arquivos/f" + str(i) + ".html"
     f = open(movie_file, "w", encoding="UTF-8")
     f.write(html)
     f.close()
@@ -145,7 +145,7 @@ for ator in atores:
 </html>
     '''.format(ator, filmes)
 
-    ator_file = "arquivos/atores/a" + str(i) + ".html"
+    ator_file = "arquivos/a" + str(i) + ".html"
     f = open(ator_file, "w", encoding="UTF-8")
     f.write(html)
     f.close()
