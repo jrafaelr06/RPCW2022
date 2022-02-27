@@ -5,14 +5,12 @@ myServer = http.createServer(function (req, res) {
     myUrl = "./arquivos/"
     fields = req.url.slice(1).split("/")
     
-    if (fields[0] === "filmes") {
-        if(fields.length === 2) {
-            myUrl += fields[1] + ".html"
-        } else {
-            myUrl += "index.html"
-        }
-    } else if (fields[0] === "atores") {
+    if (fields[0] === "filmes" && fields.length === 2) {
+        myUrl += fields[1] + ".html"
+    } else if (fields[0] === "atores" && fields.length < 3) {
         myUrl += fields[fields.length - 1] + ".html"
+    } else {
+        myUrl += "index.html"
     }
 
     fs.readFile(myUrl, function (err, data) {

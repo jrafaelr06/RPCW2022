@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doc>
+    <meta>
+        <titulo>TPC2: </titulo>
+        <data>2022-02-22</data>
+        <autor>
+            <id>PG47385<id>
+            <nome>José Rafael Pires Reis</nome>
+        </autor>
+        <uc>
+            <sigla>RPCW2022</sigla>
+            <nome>Representação e Processamento de Conhecimento na Web</nome>
+        </uc>
+    </meta>
+    <resumo>
+        <p></p>
+    </resumo>
+    <resultados>
+        <resultado>
+            <url>fileServer.js</url>
+            <texto>Servidor</texto>
+        </resultado>
+        <resultado>
+            <url>gerador.py</url>
+            <texto>Gerador das páginas HTML</texto>
+        </resultado>
+    </resultados>
+</doc>
