@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <doc>
     <meta>
-        <titulo>TPC2: </titulo>
+        <titulo>TPC2: Servidor de Ficheiros</titulo>
         <data>2022-02-22</data>
         <autor>
             <id>PG47385<id>
@@ -13,7 +13,23 @@
         </uc>
     </meta>
     <resumo>
-        <p></p>
+        <p>O objetivo deste trabalho para casa era criar um servidor de ficheiros html.</p>
+        <p>O primeiro passo era gerar ficheiros html tendo em conta a informação armazenda no 
+            <xref>
+                <url>epl.di.uminho.pt/~jcr/AULAS/ATP2021/datasets/cinemaATP.json</url>
+                <texto>ficheiro JSON</texto>
+            </xref>
+            fornecido pelo docente.
+        </p>
+        <p>
+            Para gerar os html's criei um script em python que vai ler o ficheiro JSON e tratar
+            da informação lida. O que este ficheiro faz é começar por criar três dicionários, um
+            para armazenar os identificadores dos filmes e outro dos atores e outro em que a key 
+            é o nome de um ator e os values uma lista de filmes em que este participou.
+        </p>
+        <p>
+            
+        </p>
     </resumo>
     <resultados>
         <resultado>
