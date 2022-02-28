@@ -1,5 +1,20 @@
 import json
 import collections
+import os
+
+# Função que retorna o inicio de um ficheiro html
+# Esta função só foi criada para limpar código
+def getHeaderHTML(titulo):
+    return '''<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{}</title>
+    </head>
+    <body>\n'''.format(titulo)
+
+# Criar a diretoria arquivos, caso não exista
+os.makedirs('arquivos', exist_ok=True)
 
 # Abrir e ler o conteudo do ficheiro JSON
 file = open('cinemaATP.json', encoding="UTF-8")
@@ -35,14 +50,8 @@ for title in ordered:
 ul +="\n\t\t</ul>"
 
 # String para depois escrever para um ficheiro HTML
-html = '''<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>FILMES</title>
-    </head>
-    <body>
-        <p><a href="http://localhost:7777/atores">Ver lista de atores</a></p>
+html_lista_filmes = getHeaderHTML("FILMES")
+html_lista_filmes += '''\t\t<p><a href="http://localhost:7777/atores">Ver lista de atores</a></p>
         <h1>LISTA DE FILMES</h1>
         {0}
     </body>
@@ -50,7 +59,7 @@ html = '''<!DOCTYPE html>
 
 # Escrita para os ficheiros
 f = open("arquivos/index.html", "w", encoding="UTF-8")
-f.write(html)
+f.write(html_lista_filmes)
 f.close()
 
 # Ordenar a lista de url's pelo nome do ator
@@ -64,14 +73,8 @@ for ator in od:
 ul2 +="\n\t\t</ul>"
 
 # String para depois escrever para um ficheiro HTML
-html = '''<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>FILMES</title>
-    </head>
-    <body>
-        <p><a href="http://localhost:7777/atores">Ver lista de filmes</a></p>
+html_lista_atores = getHeaderHTML("ATORES")
+html_lista_atores +='''\t\t<p><a href="http://localhost:7777/atores">Ver lista de filmes</a></p>
         <h1>LISTA DE ATORES</h1>
         {0}
     </body>
@@ -79,7 +82,7 @@ html = '''<!DOCTYPE html>
 
 # Escrita para os ficheiros
 f = open("arquivos/atores.html", "w", encoding="UTF-8")
-f.write(html)
+f.write(html_lista_atores)
 f.close()
 
 # Para cada filme vamos criar um ficheiro HTML
@@ -96,14 +99,8 @@ for d in data:
         genres += "\n\t\t\t<li>" + genre + "</li>"
 
     # html final para a página de um filme
-    html = '''<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{0}</title>
-    </head>
-    <body>
-        <h1>{0}</h1>
+    html_filme = getHeaderHTML(d['title'])
+    html_filme += '''\t\t<h1>{0}</h1>
         <h3>Cast</h3>
         <ul>
             {1}
@@ -121,7 +118,7 @@ for d in data:
     # Escrita do html num ficheiro .html
     movie_file = "arquivos/f" + str(i) + ".html"
     f = open(movie_file, "w", encoding="UTF-8")
-    f.write(html)
+    f.write(html_filme)
     f.close()
     i += 1
 
@@ -134,14 +131,8 @@ for ator in atores:
         filmes += "\n\t\t\t<li><a>" + filme + "</a></li>"
 
     # html final da página do ator
-    html = '''<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{0}</title>
-    </head>
-    <body>
-        <h3>Filmes em que <strong>{0}</strong> participou:</h3>
+    html_ator = getHeaderHTML(ator)
+    html_ator += '''\t\t<h3>Filmes em que <strong>{0}</strong> participou:</h3>
         <ul>
             {1}
         </ul>
@@ -154,6 +145,6 @@ for ator in atores:
     # Escrita da string num ficheiro .html
     ator_file = "arquivos/a" + str(i) + ".html"
     f = open(ator_file, "w", encoding="UTF-8")
-    f.write(html)
+    f.write(html_ator)
     f.close()
     i += 1
