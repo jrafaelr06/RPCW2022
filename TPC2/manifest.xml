@@ -13,17 +13,17 @@
         </uc>
     </meta>
     <resumo>
-        <p>O objetivo deste trabalho para casa era criar um servidor de ficheiros html, 
+        <p>O objetivo deste trabalho para casa é criar um servidor de ficheiros html, 
             tendo em conta a informação armazenada no 
             <xref>
                 <url>epl.di.uminho.pt/~jcr/AULAS/ATP2021/datasets/cinemaATP.json</url>
                 <texto>ficheiro JSON</texto>
-            </xref> fornecido pelo docente.</p>
+            </xref>, fornecido pelo docente.</p>
         <p>O primeiro passo para a resolução deste TPC foi a realização de um script em Python 
-            que interpretava a informação armazenada no JSON e criava os ficheiros HTML necessários 
+            que interpreta a informação armazenada no JSON e cria os ficheiros HTML necessários 
             com essa mesma informação.</p>
-        <p>Tendo em conta a informação dada no JSON decidi criar 4 tipos de páginas html, uma em 
-            que listava todos os filmes, outra que listava todos os atores e depois uma para cada 
+        <p>Tendo em conta a informação dada no JSON criei 4 tipos de páginas html, uma em 
+            que lista todos os filmes, outra que lista todos os atores e depois uma para cada 
             filme e uma para cada ator.</p>
         <p>O segundo e último passo foi a criação do servidor de ficheiros. Para a criação deste segui a 
             metodologia utilizada na aula, sendo que um url do tipo "/atores" redireciona para a lista dos atores,
