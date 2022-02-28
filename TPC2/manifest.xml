@@ -13,23 +13,22 @@
         </uc>
     </meta>
     <resumo>
-        <p>O objetivo deste trabalho para casa era criar um servidor de ficheiros html.</p>
-        <p>O primeiro passo era gerar ficheiros html tendo em conta a informação armazenda no 
+        <p>O objetivo deste trabalho para casa era criar um servidor de ficheiros html, 
+            tendo em conta a informação armazenada no 
             <xref>
                 <url>epl.di.uminho.pt/~jcr/AULAS/ATP2021/datasets/cinemaATP.json</url>
                 <texto>ficheiro JSON</texto>
-            </xref>
-            fornecido pelo docente.
-        </p>
-        <p>
-            Para gerar os html's criei um script em python que vai ler o ficheiro JSON e tratar
-            da informação lida. O que este ficheiro faz é começar por criar três dicionários, um
-            para armazenar os identificadores dos filmes e outro dos atores e outro em que a key 
-            é o nome de um ator e os values uma lista de filmes em que este participou.
-        </p>
-        <p>
-            
-        </p>
+            </xref> fornecido pelo docente.</p>
+        <p>O primeiro passo para a resolução deste TPC foi a realização de um script em Python 
+            que interpretava a informação armazenada no JSON e criava os ficheiros HTML necessários 
+            com essa mesma informação.</p>
+        <p>Tendo em conta a informação dada no JSON decidi criar 4 tipos de páginas html, uma em 
+            que listava todos os filmes, outra que listava todos os atores e depois uma para cada 
+            filme e uma para cada ator.</p>
+        <p>O segundo e último passo foi a criação do servidor de ficheiros. Para a criação deste segui a 
+            metodologia utilizada na aula, sendo que um url do tipo "/atores" redireciona para a lista dos atores,
+            um url do tipo "/atores/aXX" redireciona para um ator, um url do tipo "/filmes/fXX" redireciona para 
+            um filme e qualquer outro url redireciona para a página principal, a lista de filmes.</p>
     </resumo>
     <resultados>
         <resultado>
