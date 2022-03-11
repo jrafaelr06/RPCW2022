@@ -1,2 +1,3 @@
-# ignorar os milhares de HTML's gerados
 TPC2/arquivos/
+TPC3/db.json
+TPC3/node_modules
