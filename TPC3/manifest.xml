@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doc>
+    <meta>
+        <titulo>TPC3</titulo>
+        <data>2022-03-15</data>
+        <autor>
+            <id>PG47385<id>
+            <nome>José Rafael Pires Reis</nome>
+        </autor>
+        <uc>
+            <sigla>RPCW2022</sigla>
+            <nome>Representação e Processamento de Conhecimento na Web</nome>
+        </uc>
+    </meta>
+    <resumo>
+        <p>O objetivo deste trabalho para casa é, tendo em conta a informação armazenada no  
+            <xref>
+                <url>https://epl.di.uminho.pt/~jcr/TRANSF/db.json</url>
+                <texto>ficheiro JSON</texto>
+            </xref>, fornecido pelo docente, utilizar o json-server para criar um servidor na porta 3000 e, de seguida, criar um servidor
+            em JavaScript que faça requests ao primeiro servidor criado e que apresente a informação na porta 4000.</p>
+        <p>Para a implementação do servidor na porta 4000 começo por chamar o método createServer() do http. Dentro deste método faço o 
+        devido parse do url do pedido e, dependendo do pedido, é feito algo. Se no url vier apenas "/" apresenta-se a página principal, 
+        que corresponde a uma lista de três elementos, três apontadores para outros url's. Se for "/alunos", "/cursos" ou "/instrumentos" 
+        faz um pedido de get ao servidor a correr na porta 3000 e com a informação obtida cria uma tabela em HTML.</p>
+        <p>Para cada HTML foi também inserido um bloco style de forma a centrar os títulos e as tabelas.</p>
+    </resumo>
+    <resultados>
+        <resultado>
+            <url>server.js</url>
+            <texto>Servidor</texto>
+        </resultado>
+    </resultados>
+</doc>

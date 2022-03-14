@@ -4,6 +4,9 @@ var axios = require('axios')
 
 // Criação do servidor
 http.createServer(async function (req, res) {
+    var d = new Date().toISOString().substring(0, 16)
+    console.log(req.method + " " + req.url + " " + d)
+
     res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'})
     var myUrl = url.parse(req.url, true).pathname
 
@@ -80,7 +83,7 @@ async function generateCoursesTable(url_get) {
                 <th>${p.designacao}</th>
                 <th>${p.duracao}</th>
                 <th>${p.instrumento.id}</th>
-                <th>${p.instrumento.text}</th>
+                <th>${p.instrumento["#text"]}</th>
             </tr>`
     })
     r += "</table>"
@@ -102,7 +105,7 @@ async function generateInstrumentsTable(url_get) {
     data.forEach(p => {
         r += `<tr>
                 <th>${p.id}</th>
-                <th>${p.text}</th>
+                <th>${p["#text"]}</th>
             </tr>`
     })
     r += "</table>"
@@ -132,6 +135,11 @@ function generateHTML(title, body) {
         <style>
             table, th, td {
                 border:1px solid black;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            h1 {
+                text-align: center;
             }
         </style>
         <body>
