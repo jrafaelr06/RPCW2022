@@ -1,8 +1,20 @@
 {
-    "por_fazer": [
-
-    ],
-    "feitas": [
-
-    ]
+  "porFazer": [
+    {
+      "dateDued": "2022-04-10",
+      "who": "Rafael",
+      "id": "Aniversário",
+      "type": "Festa",
+      "dateCreated": "2022-03-21"
+    }
+  ],
+  "feitas": [
+    {
+      "dateDued": "2022-03-22",
+      "who": "Rafael",
+      "id": "Limpar o carro",
+      "type": "Limpeza",
+      "dateCreated": "2022-03-21"
+    }
+  ]
 }
