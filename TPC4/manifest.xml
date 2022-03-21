@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doc>
+    <meta>
+        <titulo>TPC4: Single Page Application for toDo lists</titulo>
+        <data>2022-03-22</data>
+        <autor>
+            <id>PG47385<id>
+            <nome>José Rafael Pires Reis</nome>
+        </autor>
+        <uc>
+            <sigla>RPCW2022</sigla>
+            <nome>Representação e Processamento de Conhecimento na Web</nome>
+        </uc>
+    </meta>
+    <resumo>
+        <p>O objetivo deste trabalho para casa é de criar uma SPA para organizar tarefas.</p>
+        <p>Esta aplicação está dividida em três partes, um form para inserir/alterar tarefas, 
+        uma tabela com as especificações das tarefas por fazer e outra com as tarefas já feitas.</p>
+        <p>Na aplicação é possível alterar e concluir tarefas por fazer e eliminar tarefas já 
+        feitas. Para eliminar as tarefas feitas é realizado um pedido GET ao servidor.js que 
+        depois faz um DELETE request ao servidor json a correr na porta 3000. Para concluir 
+        uma tarefa é feito também um pedido GET ao servidor.js que começa por adicionar a tarefa 
+        à lista de tarefas feitas e acaba a remover a tarefa da lista de tarefas a fazer.</p>
+        <p>Para alterar uma tarefa é aproveitado o form já criado e colocado um botão no html 
+        cujo objetivo é, ao ser premido, alterar entre "alterar uma tarefa" e "adicionar uma tarefa". 
+        Para isto foi feito um script que tem como função alterar o valor action do form. Quando o 
+         é premido e é alterado de "adicionar uma tarefa" para "alterar uma tarefa" e o form é preenchido, 
+         é feito um pedido de POST ao servidor.js que depois faz um PUT no servidor JSON, alterando os valores pedidos.</p>
+    </resumo>
+    <resultados>
+        <resultado>
+            <url>server.js</url>
+            <texto>Servidor</texto>
+        </resultado>
+        <resultado>
+            <url>db.json</url>
+            <texto>Base de dados em formato JSON</texto>
+        </resultado>
+        <resultado>
+            <url>static.js</url>
+            <texto>Programa que trata dos recursos estáticos</texto>
+        </resultado>
+        <resultado>
+            <url>w3.css</url>
+            <texto>Ficheiro de estilo CSS</texto>
+        </resultado>
+    </resultados>
+</doc>
