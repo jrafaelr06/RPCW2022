@@ -1,6 +1,5 @@
 f = open('arq-son-EVO.json')
 content = f.readlines()
-
 f.close()
 
 i = 0
@@ -13,7 +12,5 @@ for line in content:
 final += ']}'
 
 w = open('clean.txt', 'w')
-
 w.write(final)
-
 w.close()

@@ -1,9 +1,12 @@
-extends layout 
-
-block content
-    h1 Lista de Músicas
-    h2 29 de Março de 2022
-    table
+html
+  head
+    title Lista de Músicas
+    link(rel='stylesheet', href='/stylesheets/w3.css')
+  body
+    div(class="w3-container w3-teal")
+        h1 Lista de Músicas
+    div
+    table(class="w3-table-all")
         tr
             th Identificador
             th Título
