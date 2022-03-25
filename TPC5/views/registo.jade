@@ -1,0 +1,28 @@
+extends layout 
+
+block content
+    h1 Adicionar uma música
+    form(action="", method="POST")
+        label Provincia
+        input(type="text", name="prov")
+        br
+        label Localização
+        input(type="text", name="local")
+        br
+        label Nome da música
+        input(type="text", name="tit")
+        br
+        label Instrumentos
+        input(type="text", name="inst")
+        br
+        label Ficheiro
+        input(type="text", name="file")
+        br
+        label Tipo do ficheiro
+        input(type="text", name="fileType")
+        br
+        label Duração da música
+        input(type="text", name="fileType")
+        br
+        input(type="submit", value="Registar")
+        input(type="reset", value="Limpar valores")

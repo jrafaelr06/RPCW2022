@@ -1,0 +1,16 @@
+extend layout
+
+block content
+    h1 Página da música "#{musica.tit}"
+    ul
+        li Identificador = #{musica.id}
+        li Provincia = #{musica.prov}
+        li Nome = #{musica.tit}
+        li Cantor/Banda = #{musica.musico}
+        li Nome do ficheiro = #{musica.file}
+        li Tipo do ficheiro = #{musica.fileType}
+        li Duração da música = #{musica.duracao}
+    ul
+    hr
+    address 
+        a(href="/musicas") Voltar à lista
