@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doc>
+    <meta>
+        <titulo>TPC5</titulo>
+        <data>2022-03-29</data>
+        <autor>
+            <id>PG47385<id>
+            <nome>José Rafael Pires Reis</nome>
+        </autor>
+        <uc>
+            <sigla>RPCW2022</sigla>
+            <nome>Representação e Processamento de Conhecimento na Web</nome>
+        </uc>
+    </meta>
+    <resumo>
+        <p>O objetivo deste trabalho para casa é, a partir de um ficheiro JSON fornecido pelo docente, 
+        criar uma aplicação Web utilizando o Express.</p>
+        <p>O primeiro passo foi corrigir o ficheiro JSON, que continha alguns erros impossibilitando a 
+        sua utilização pelo json-server. Para tal criei um pequeno script em python que acrescentou o 
+        campo "id" a cada um dos elementos do ficheiro JSON e colocou uma virgula a separar cada elemento. 
+        Para tornar o ficheiro mais legível utilizei um site online que formatou o ficheiro já corrigido.</p>
+        <p>De seguida criei a rota '/' e '/musicas' que mostravam a lista das musicas presentes no ficheiro 
+        JSON. Criei também a rota '/musicas/:id' que correspondia à página individual da música com o 
+        correspondente id. A rota '/musicas/:idProv' devolvia a lista de todas as músicas da correspondente província.</p>0
+        <p>Como desafio extra e para finalizar o trabalho para casa criei a rota 'musicas/inserir' que mandava 
+        um formulário ao utilizador e, depois do utilizador preencher a informação do formulário e a submeter, 
+        é feito um POST request ao json-server colocando lá a informação da nova música inserida pelo utilizador.</p>
+    </resumo>
+    <resultados>
+        <resultado>
+            <url>cleaner.py</url>
+            <texto>Script que corrigiu o JSON</texto>
+        </resultado>
+        <resultado>
+            <url>app.js</url>
+            <texto>Servidor</texto>
+        </resultado>
+    </resultados>
+</doc>
