@@ -1,0 +1,27 @@
+extends layout
+
+block content
+    div(class="w3-container w3-teal")
+        h2 File Page
+           
+    img(src=path, alt="Imagem")
+
+    div(class="w3-container w3-teal")
+        h2 File Info
+
+    table(class="w3-table w3-bordered")
+        tr
+            th Date
+            th File
+            th Size
+            th Type
+            th Description
+        tr
+            th= file.name
+            th= file.date
+            th= file.size
+            th= file.mimetype
+            th= file.descricao
+
+    footer(class="w3-container w3-teal")
+        address Gerado por gFicheiros::RPCW2022 em #{data}

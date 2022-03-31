@@ -7,7 +7,38 @@ block content
         label(class="w3-text-teal")
             b Select File
         input(class="w3-input w3-border w3-light-grey", type="file", name="myFile")
+        br
+        label(class="w3-text-teal")
+            b Write the file description
+        input(class="w3-input w3-border w3-light-grey", type="text", name="description")
+        br
         input(class="w3-btn w3-blue-grey", type="submit", value="Submit")
+
+    if files.length > 0    
+        div(class="w3-container w3-teal")
+            h2 Files List
+        table(class="w3-table w3-bordered")
+            tr
+                th Filename
+                th Date
+                th Size
+                th Type
+                th Description
+                th Remove File
+            each f in files
+                tr
+                    th
+                        a(href="/file/" + f.id)= f.name
+                    th= f.date
+                    th= f.size
+                    th= f.mimetype
+                    th= f.descricao
+                    th 
+                        a(href="/remove/" + f.id)
+                            button(class="w3-button w3-round w3-grey") X
+    else
+        div(class="w3-container")
+            p There are no files...
 
     footer(class="w3-container w3-teal")
         address Gerado por gFicheiros::RPCW2022 em #{data}
