@@ -56,8 +56,6 @@ router.post('/files', upload.single('myFile'), function(req, res) {
 
 	var d = new Date().toISOString().substring(0, 16)
 
-	console.log(req.body)
-
 	axios.post('http://localhost:3000/files', {
 		"date": d,
 		"name": req.file.originalname,

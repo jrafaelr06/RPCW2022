@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doc>
+    <meta>
+        <titulo>TPC6: WebApp gerada a partir do Express</titulo>
+        <data>2022-04-05</data>
+        <autor>
+            <id>PG47385<id>
+            <nome>José Rafael Pires Reis</nome>
+        </autor>
+        <uc>
+            <sigla>RPCW2022</sigla>
+            <nome>Representação e Processamento de Conhecimento na Web</nome>
+        </uc>
+    </meta>
+    <resumo>
+        <p>O objetivo deste trabalho para casa é de gerar uma WebApp, a partir do Express. 
+        Nesta WebApp deve ser permitido inserir ficheiros de imagem, ver a listagem dos 
+        ficheiros que já foram inseridos até ao momento e ainda remover ficheiros da lista. 
+        Como trabalho extra era suposto ao clicar no nome de um ficheiro da lista ser redirecionado 
+        para uma página individual da imagem, com a descrição dessa imagem e a imagem em si.</p>
+        <p>Quanto ao local que iamos guardar a informação dos ficheiros podiamos optar entre 
+        guardar numa base de dados MongoDB ou num ficheiro JSON. Eu decidi guardar num ficheiro 
+        JSON e depois utilizei o json-server para correr uma API de dados desse ficheiro na porta 3000.</p>
+        <p>Quanto à WebApp, gerada em Express, ela atende nas seguintes routes: '/', '/remove/:id' 
+        e '/file/:id'. A primeira mostra a página principal, onde no início tem um formulário no 
+        qual é possível inserir um ficheiro e uma descrição para esse ficheiro e depois submeter 
+        essa informação para o json-server. Em baixo do formulário tem uma tabela que demonstra 
+        a informação relativa a cada ficheiro até já inserido e é possível clicar no nome de cada 
+        um deles e ser redirecionado para a página do mesmo, tem também um botão para eliminar esse 
+        registo da tabela. Já a segunda serve para fazer um DELETE request ao json-server do ficheiro 
+        recebido como id. Por fim, a última redireciona para a página individual do ficheiro com o id recebido.</p>
+        <p>Para além das routes de GET que atende, também atende o pedido POST '/files' que é feito 
+        pelo formulário da página principal e serve para adicionar o ficheiro e a informação do ficheiro ao json-server.</p>
+        <p>Quanto ao trabalho extra criei a página individual para os ficheiros mas não consegui dar download da imagem para o utilizador.</p>
+    </resumo>
+    <resultados>
+        <resultado>
+            <url>app.js</url>
+            <texto>Servidor</texto>
+        </resultado>
+        <resultado>
+            <url>dbFiles.json</url>
+            <texto>Ficheiro JSON com a informação sobre os ficheiros</texto>
+        </resultado>
+    </resultados>
+</doc>
