@@ -1,0 +1,16 @@
+extends layout 
+
+block content 
+    div(class="w3-container w3-teal")
+        h2  Lista de classes de nível 1
+    table(class="w3-table w3-bordered")
+        tr 
+            th Código 
+            th Título
+        each c in classes
+            tr 
+                th
+                    a(href="/codigo/" + c.codigo)= c.codigo
+                th= c.titulo
+    footer(class="w3-container w3-teal")
+        address Gerado por clav::RPCW2022 em #{data}

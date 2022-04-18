@@ -1,0 +1,45 @@
+extends layout
+
+block content
+    div(class="w3-container w3-teal")
+        h2 #{info.codigo} | #{info.titulo} | Nível #{info.nivel}
+    div(class="w3-container")
+        p= info.descricao
+        
+    if info.filhos.length > 0 
+        div(class="w3-container w3-teal")
+            h3 Lista de filhos 
+        table(class="w3-table w3-bordered")
+            tr
+                th Código
+                th Título
+            each c in info.filhos
+                tr
+                    th
+                        a(href="/codigo/" + c.codigo)= c.codigo
+                    th= c.titulo
+    else if info.nivel == 3 && info.processosRelacionados.length > 0
+        div(class="w3-container w3-teal")
+            h3 Lista de processos relacionados
+        table(class="w3-table w3-bordered")
+            tr
+                th Código
+                th Título
+            each c in info.processosRelacionados
+                if c.idRel == 'eCruzadoCom' || c.idRel == 'eComplementarDe' || c.idRel == 'eSuplementoDe' || c.idRel == 'eSuplementoPara'
+                    tr
+                        th
+                            a(href="/codigo/" + c.codigo)= c.codigo
+                        th= c.titulo
+    else
+        div(class="w3-container")
+            p Não tem filhos...
+    
+    address
+        if info.pai.codigo != undefined
+            a(href="/codigo/" + info.pai.codigo) Voltar atrás 
+        br
+        a(href="/") Voltar ao menu principal
+
+    footer(class="w3-container w3-teal")
+        address Gerado por clav::RPCW2022 em #{data}
