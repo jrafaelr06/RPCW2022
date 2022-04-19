@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doc>
+    <meta>
+        <titulo>TPC6: CLAV: Classificação e Avaliação da Informação Pública</titulo>
+        <data>2022-04-19</data>
+        <autor>
+            <id>PG47385<id>
+            <nome>José Rafael Pires Reis</nome>
+        </autor>
+        <uc>
+            <sigla>RPCW2022</sigla>
+            <nome>Representação e Processamento de Conhecimento na Web</nome>
+        </uc>
+    </meta>
+    <resumo>
+        <p>O objetivo deste trabalho para casa é de desenvolver uma aplicação em NodeJS 
+        que permita navegar na estrutura de classes do CLAV.</p>
+        <p>Para realizar pedidos à API de dados foi fornecida uma chave de autorização a 
+        qual foi  armazenada dentro do programa numa constante.</p>
+        <p>Para a aplicação foi criada a rota '/' que corresponde à página inicial e que 
+        para além do titulo aparece também a lista de classes do nível 1. Para cada classe 
+        da lista aparece o código e o titulo desta, o  código corresponde a um link que 
+        realiza um pedido a outra rota que existe na aplicação, a rota '/codigo/:id. Esta 
+        rota corresponde à página individual da classe e aqui vai aparecer uma descrição 
+        da classe e uma lista dos seus descendentes, caso existam. Se for uma classe de 
+        nível 3 em vez da lista dos descendentes vai aparecer a lista de processos 
+        relacionados, apenas as relações eCruzadoCom, eComplementarDe, eSuplementoDe e 
+        eSuplementoPara.</p>
+        <p>Em todas as páginas, exceto na página principal, há dois links, um para voltar 
+        à página inicial e outro para voltar à página anterior.</p>
+    </resumo>
+    <resultados>
+        <resultado>
+            <url>app.js</url>
+            <texto>Servidor</texto>
+        </resultado>
+    </resultados>
+</doc>
