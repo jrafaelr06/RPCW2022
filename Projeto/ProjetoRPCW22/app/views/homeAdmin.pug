@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  a(href="/auth/logout" class="w3-button w3-teal") Terminar sessão
+  h1(class="w3-center") Bem-vindo #{user}
+  div(class="w3-display-middle")
+    ul(class="w3-ul w3-center")
+      li
+        a(href="/user" class="w3-button w3-teal") Ver a lista de utilizadores
+      li
+        a(href="/uc" class="w3-button w3-teal") Ver a lista de unidades curriculares
+      li
+        a(href="/notifications" class="w3-button w3-teal") Gerir notificações
+  

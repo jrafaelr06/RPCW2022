@@ -1,0 +1,13 @@
+html
+  head
+    title RRD
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body(class="body")
+    div(class="container")
+      if type == "Utilizador"
+        h1 Novo utilizador criado.
+        a(href="/user/add") Voltar à página anterior
+      else
+        h1 Nova Unidade Curricular criada.
+        a(href="/uc/add") Voltar à página anterior
+      

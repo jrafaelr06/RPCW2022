@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  div(class="w3-container w3-teal")
+    h2.w3-left Lista de Unidades Curriculares
+    a(href="/" class="w3-button w3-green w3-right w3-margin-top") Voltar atrás
+    a(href="/uc/add" class="w3-button w3-green w3-right w3-margin-top w3-margin-right") Adicionar nova unidade curricular
+  table(class="w3-table w3-bordered")
+    tr
+      th Unidade Curricular
+      th Ano
+      th Semestre
+      th Ver/Adicionar/Remover alunos/professores
+      th Eliminar UC
+    each c in data
+      tr
+        td=c.name
+        td=c.year
+        td=c.semester
+        td
+          a(href="/uc/addStudent/" + c.name) +
+        td
+          a(href="/uc/remove/" + c.name) X

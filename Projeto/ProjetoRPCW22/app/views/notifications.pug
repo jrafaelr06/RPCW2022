@@ -1,0 +1,32 @@
+extends layout
+
+block content
+  div(class="w3-container w3-teal")
+    a(href="/" class="w3-button w3-green w3-right w3-margin-top") Voltar atrás
+    if uc
+      h2.w3-left Lista Notificações - #{uc}
+      if user.type != 'student'
+        a(href="/uc/notifications/create/" + uc class="w3-button w3-green w3-margin-top w3-right w3-margin-right") Adicionar nova notificação
+    else 
+      h2.w3-left Lista Notificações
+      if user.type != 'student'
+        a(href="/notifications/create" class="w3-button w3-green w3-margin-top w3-right w3-margin-right") Adicionar nova notificação
+  table(class="w3-table w3-bordered")
+    tr
+      th Título
+      if !uc
+        th Unidade Curricular
+      th Remetente
+      th Conteúdo
+      if user.type != 'student'
+        th Eliminar
+    each n in data
+      tr
+        td=n.title
+        if !uc
+          td=n.uc
+        td=n.sender
+        td=n.content
+        if user.type != 'student'
+          td
+            a(href="/notifications/remove/" + n._id) X

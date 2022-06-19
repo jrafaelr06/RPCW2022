@@ -1,0 +1,35 @@
+extends layout
+
+block content
+    div.w3-container.w3-teal
+        h2.w3-left Conteúdo
+        a.w3-button.w3-green.w3-right.w3-margin-top(href='/') Voltar atrás
+        if user.type == 'professor'
+          a.w3-button.w3-green.w3-right.w3-margin-right.w3-margin-top(onclick="document.getElementById('id01').style.display='block'") Adicionar conteúdo
+    div.w3-modal(id="id01")
+      div.w3-modal-content
+        div.w3-container
+          span.w3-button.w3-display-topright(onclick="document.getElementById('id01').style.display='none'") &times;
+          form(enctype="multipart/form-data" action="/uc/content" method="POST")
+            input(type="text" name="title" placeholder="Título" class="w3-input w3-margin w3-border")
+            input(type="text" name="type" placeholder="Tipo do recurso" class="w3-input w3-margin w3-border")
+            input(type="text" name="producer" class="w3-hide" value=user.name)
+            input(type="text" name="uc" class="w3-hide" value=uc)
+            input(type="file" name="myFile")
+            input(type="submit")
+    table.w3-table.w3-bordered
+      tr
+        th Nome
+        th Data
+        th Publicado por
+        if user.type != "student"
+          th Eliminar
+      each file in data
+        tr
+          td
+            a(href="/uc/content/download/" + file._id)=file.title
+          td=file.submission_date
+          td=file.sub_id
+          if user.type != "student"
+            td
+              a(href="/uc/content/remove/" + file._id + "?uc=" + uc) X

@@ -1,0 +1,36 @@
+extends layout
+
+block content
+  div(class="w3-container w3-teal")
+    h2=data.name
+    a(href="/uc" class="w3-button w3-green w3-right w3-margin") Voltar atrás
+    form(action="/uc/addUser" method="POST")
+      input(type="text" name="uc" value=data.name class="w3-hide")
+      input(type="text" name="id" required)
+      button(type="submit" class="w3-btn w3-margin-left w3-green") Adicionar utilizador
+  h2(class="w3-container w3-teal") Lista de Docentes
+  if data.professors.length > 0
+    table(class="w3-table w3-bordered")
+      tr
+        th Identificador
+        th Eliminar
+      each prof in data.professors
+        tr
+          td=prof
+          td
+            a(href="/uc/removeStudent/" + data.name + "?user=" + prof) X
+  else
+    p(class="w3-margin-left") Não há professores atribuidos a esta Unidade Curricular
+  h2(class="w3-container w3-teal") Lista de Alunos
+  if data.students.length > 0
+    table(class="w3-table w3-bordered")
+      tr
+        th Identificador
+        th Eliminar
+      each student in data.students
+        tr
+          td=student
+          td
+            a(href="/uc/removeStudent/" + data.name + "?user=" + student) X
+  else
+    p(class="w3-margin-left") Não há alunos atribuidos a esta Unidade Curricular

@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  div(class="w3-display-container w3-display-middle")
+    form(action="/auth/login" method="POST")
+      if messages.error
+        span(class="w3-text-red w3-margin")=messages.error
+      input(type="text" name="id" placeholder="Identificador" required class="w3-input w3-margin w3-border")
+      input(type="password" name="pw" placeholder="Password" required class="w3-input w3-margin w3-border")
+      button(type="submit" class="w3-btn w3-teal w3-margin") Iniciar Sessão

@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  a(href="/" class="w3-button w3-teal") Voltar atrás
+  h1(class="w3-center")=uc
+  div(class="w3-display-middle")
+    ul(class="w3-ul w3-center") 
+      li
+        a(href="/uc/content/" + uc class="w3-button w3-teal") Ver conteúdo da Unidade Curricular
+      li
+        a(href="/uc/notifications/" + uc class="w3-button w3-teal") Ver avisos

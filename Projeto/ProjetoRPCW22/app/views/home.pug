@@ -1,0 +1,19 @@
+extends layout
+
+block content
+    div.w3-container.w3-teal
+        h2.w3-left Lista de Unidades Curriculares
+        a.w3-button.w3-green.w3-right.w3-margin-top(href='/auth/logout') Terminar sessão
+        if user.type == 'student'
+          a.w3-button.w3-green.w3-right.w3-margin-right.w3-margin-top(href='/notifications') Avisos
+    table.w3-table.w3-bordered
+      tr
+        th Unidade Curricular
+        th Ano
+        th Semestre
+      each c in user.classes
+        tr
+          td
+            a(href='/uc/' + c.name)=c.name
+          td=c.year
+          td=c.semester

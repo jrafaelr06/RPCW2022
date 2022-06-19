@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  div(class="w3-display-container w3-display-middle")
+    form(action="/notifications" method="POST")
+      input(type="text" name="sender" class="w3-hide" value=sender)
+      input(type="text" name="uc" class="w3-hide" value=uc)
+      input(type="text" name="title" placeholder="Título" required class="w3-input w3-margin w3-border")
+      textarea(name="warning", cols="30", rows="10" required class="w3-input w3-margin w3-border" placeholder="Notificação")
+      button(type="submit" class="w3-btn w3-teal w3-margin") Enviar notificação
+      br
+      a(href="/notifications" class="w3-margin") Voltar à página anterior

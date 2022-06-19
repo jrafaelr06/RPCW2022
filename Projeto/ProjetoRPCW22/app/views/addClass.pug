@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  div(class="w3-display-container w3-display-middle")
+    form(action="/uc/add" method="POST")
+      input(type="text" name="name" placeholder="Unidade Curricular" required class="w3-input w3-margin w3-border")
+      input(type="number" name="year" placeholder="Ano" required class="w3-input w3-margin w3-border")
+      input(type="number" name="semester" placeholder="Semestre" class="w3-input w3-margin w3-border")
+      button(type="submit" class="w3-btn w3-teal w3-margin") Criar nova unidade curricular
+      br
+      a(href="/uc" class="w3-margin") Voltar à página anterior

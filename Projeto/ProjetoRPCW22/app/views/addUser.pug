@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  div(class="w3-display-container w3-display-middle")
+    form(action="/user/add" method="POST")
+      input(type="text" name="id" placeholder="Identificador" required class="w3-input w3-margin w3-border")
+      input(type="text" name="pw" placeholder="Password" required class="w3-input w3-margin w3-border")
+      input(type="text" name="name" placeholder="Nome Completo" class="w3-input w3-margin w3-border")
+      div(class="w3-margin")
+        input(type="radio" name="type" value="admin" id="admin")
+        label(for="admin" class="w3-margin-right") Admin
+        input(type="radio" name="type" value="professor" id="professor") 
+        label(for="professor" class="w3-margin-right") Professor
+        input(type="radio" name="type" value="student" id="student" checked)
+        label(for="student") Estudante
+      button(type="submit" class="w3-btn w3-teal w3-margin") Criar novo utilizador
+      br
+      a(href="/user" class="w3-margin w3-margin-top") Voltar à página anterior
